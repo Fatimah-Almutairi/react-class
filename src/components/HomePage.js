@@ -11,7 +11,7 @@ function HomePage() {
 
 
   useEffect ( () => {
-    axios.get('https://api.themoviedb.org/3/discover/movie?api_key=2d6b3291586411f85a61201ca446cbb8&with_genres=16')  //16
+    axios.get('https://api.themoviedb.org/3/discover/movie?api_key=2d6b3291586411f85a61201ca446cbb8&with_genres=28')  //16
     .then ( (res) => {
       setGet(res.data.results);
       console.log(res.data.results);
@@ -21,7 +21,7 @@ function HomePage() {
 
   const onRemove = (id) => {
     console.log(id)
-    axios.delete(`https://api.themoviedb.org/3/discover/movie?api_key=2d6b3291586411f85a61201ca446cbb8&with_genres=28${id}`)
+    axios.delete(`https://6362424b66f75177ea2a9980.mockapi.io/ToDoList/${id}`)
     .then (res => {
       setGet(get.filter (ele => {
         return ele.id != id
@@ -30,29 +30,25 @@ function HomePage() {
   }
 
   return (
-    <div >
-       <SimpleGrid columns={[2, null, 5]} spacing='40px'>
+    <div className='cards'>
           
     {get.map ( (item) => {
       return (
         
-          <div >
-
-            <Box borderRadius="lg" overflow="hidden" maxW='sm' borderWidth='1px'  boxShadow='dark-lg' >
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                <Image transform="scale(1.0)"
-                  src={ `https://image.tmdb.org/t/p/w500${item.poster_path}` } alt="some text" objectFit="contain" width="100%" transition="0.3s ease-in-out" _hover={{ transform: 'scale(1.05)'}}/>
-              </Link>
-            </Box>
-            <Heading as="h2" marginTop="5"> {item.original_title}</Heading>
-            <button className='btn' >Delete</button>
+          <div className='contener'>
+            <div className='image-contener'>
+              <Image src={ `https://image.tmdb.org/t/p/w500${item.poster_path}` } />
+            </div>
+            <div className='title-contener'>
+              <h2 as="h2" marginTop="5"> {item.original_title}</h2></div>
+            <div className='btn-contener'>
+              <button className='btn' onClick={onRemove}>Delete</button>
               <button className='btn' >Update</button>
-            
+            </div>
           </div>
         
      )
     })}
-    </SimpleGrid>
     </div>
   )
 }

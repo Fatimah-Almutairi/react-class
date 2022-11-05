@@ -1,3 +1,9 @@
+body{
+  margin: 0;
+  font-family: sans-serif;
+  background-color: rgb(214, 210, 210);
+  padding: 10px;
+}
 .App {
   text-align: center;
 }
@@ -12,22 +18,87 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.card{
-  display: grid;
+.cards{
+  /* display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin: 50px;
-
-  /* grid-template-rows:  repeat(3,1fr); */
-
+  margin: 50px; */
+  width: 1600px;
+  margin: auto;
+  display: block;
+  margin-top: 3%;
+  margin-right: 5;
 }
-.con {
-  border:1px solid gray ;
-  /* box-shadow: gray; */
+.contener {
+  float: left;
   margin: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 380px;
+  height: 400px;
+  overflow: hidden;
+  background-color: rgba(228, 228, 228, 0.816);
+  border-radius: 5px;
+  box-shadow: 0 0 3px 0 #00000073;
+  transition: all 0.3s;
+  /* border:1px solid gray ; */
+  /* box-shadow: gray; */
+  /* margin: 10px; */
   /* display: grid; */
   /* grid-template-columns: repeat(1, 1fr); */
 }
-
+.contener:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 11px 14px rgb(0 0 0 / 25%), 0 8px 20px rgb(0 0 0 / 10%);
+}
+.image-contener {
+  display: block;
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+}
+.image-contener img {
+  width: 100%;
+  border-radius: 5px;
+}
+.title-contener {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 50px;
+  /* padding: 10px 20px; */
+}
+.title-contener  h2{
+  padding: 0;
+  margin: 10px;
+  font-size: 17px;
+}
+.btn-contener {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  text-align: center;
+  height: 40px;
+  /* border: gray; */
+}
+.btn-contener button{
+  width: 100%;
+  padding: 8px 0;
+  text-decoration: none;
+  /* background: linear-gradient(125deg, #7e8d80 0%, #afb8b0 60%); */
+  color: #000;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s;
+  /* font-family:Georgia, 'Times New Roman', Times, serif */
+}
+.btn-contener button:hover {
+  padding: 10px;
+}
+.btn {
+  margin: 10px;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
