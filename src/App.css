@@ -12,6 +12,21 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.card{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 50px;
+
+  /* grid-template-rows:  repeat(3,1fr); */
+
+}
+.con {
+  border:1px solid gray ;
+  /* box-shadow: gray; */
+  margin: 10px;
+  /* display: grid; */
+  /* grid-template-columns: repeat(1, 1fr); */
+}
 
 .App-header {
   background-color: #282c34;
